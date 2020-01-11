@@ -14,12 +14,10 @@ class App extends React.Component {
   } 
 
   componentDidMount(){
-    this.fetchData()
+    return this.fetchData()
   }
 
-  render() {
-    let user = this.state.users.results;
-    console.log(user)
+  render() {    
     return (
       <div>
         <h1>Rolodex</h1>
