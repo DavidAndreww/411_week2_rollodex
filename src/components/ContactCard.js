@@ -16,18 +16,17 @@ class UserCard extends React.Component {
         </h1>
         {this.state.displayDetails ?
           <CardBack 
+            name={this.props.firstName}
             imgMed={this.props.imgMed} 
             age={this.props.age} 
             email={this.props.email} 
             city={this.props.city} 
             country={this.props.country} 
-           firstName={this.props.firstName} 
-           lastName={this.props.lastName} 
          /> : 
           <CardFront 
-            firstName={this.props.firstName} 
-            lastName={this.props.lastName} 
-           imgLrg={this.props.imgLrg} 
+           name={this.props.firstName}
+           imgLrg={this.props.imgLrg}
+           phone={this.props.phone} 
          />}
         {this.state.displayDetails ? <HideDetailsBtn /> : <ShowDetailsBtn />}
       </div>

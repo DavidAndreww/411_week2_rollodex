@@ -1,8 +1,11 @@
 import React from 'react'
 
-const CardFront = () => {
+const CardFront = ({ imgLrg, phone, name }) => {
   return (
-    <p>front</p>
+    <React.Fragment>
+      <img src={imgLrg} alt={name} />
+      <h3>{phone}</h3>
+    </React.Fragment>
   )
 }
 
