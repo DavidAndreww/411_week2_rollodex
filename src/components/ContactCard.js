@@ -1,4 +1,6 @@
 import React from "react";
+import CardBack from './CardBack'
+import CardFront from './CardFront'
 
 class UserCard extends React.Component {
   state = {
@@ -6,11 +8,11 @@ class UserCard extends React.Component {
   };
   render() {
     return (
-      <div className="rolodex">
+      <div className="contactCard">
         <h1>
           {this.props.firstName} {this.props.lastName}
         </h1>
-        <img src={this.props.imgSrc} alt={this.props.name} />
+        {this.state.displayDetails ? (<CardBack />) : (<CardFront />)}
       </div>
     );
   }
