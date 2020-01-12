@@ -10,7 +10,7 @@ class UserCard extends React.Component {
         <h1>
           {this.props.firstName} {this.props.lastName}
         </h1>
-        <img src={this.props.imgSrc} />
+        <img src={this.props.imgSrc} alt={this.props.name} />
       </div>
     );
   }
