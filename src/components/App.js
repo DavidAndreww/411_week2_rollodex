@@ -3,7 +3,8 @@ import ContactCard from "./ContactCard";
 
 class App extends React.Component {
   state = {
-    contacts: []
+    contacts: [],
+    counter: 0
   };
 
   fetchData = () => {
@@ -17,9 +18,20 @@ class App extends React.Component {
     this.fetchData();
   }
 
+  displayNewContact = key => {
+    let counter = this.state.counter;
+    key === 1 ? counter-- : counter++;
+    if (counter >= 0 && counter <= this.state.contacts.results.length -1) {
+      this.setState({ counter });
+    } else {
+      alert(`This is the last contact in the Rolodex`);
+      return false;
+    }
+  };
+
   render() {
     let contacts = this.state.contacts;
-    console.log(contacts.results);
+    let index = this.state.counter;
     if (contacts.length === 0) {
       return <h1 className="loading">loading...please wait...</h1>;
     }
@@ -27,12 +39,12 @@ class App extends React.Component {
     return (
       <div className="app">
         <ContactCard
-          firstName={contacts.results[0].name.first}
-          lastName={contacts.results[0].name.last}
-          imgSrc={contacts.results[0].picture.large}
+          firstName={contacts.results[index].name.first}
+          lastName={contacts.results[index].name.last}
+          imgSrc={contacts.results[index].picture.large}
         />
-        <button>Left</button>
-        <button>Right</button>
+        <button onClick={() => this.displayNewContact(1)}>Left</button>
+        <button onClick={() => this.displayNewContact(2)}>Right</button>
       </div>
     );
   }
