@@ -1,5 +1,5 @@
 import React from "react";
-// import UserCard from "./UserCard";
+import UserCard from "./UserCard";
 
 class App extends React.Component {
   state = {
@@ -19,14 +19,18 @@ class App extends React.Component {
 
   render() {
     let users = this.state.users;
-    console.log(this.state.users)
+    console.log(users.results);
     if (users.length === 0) {
-      return <p>loading...please wait...</p>
+      return <h1 className="loading">loading...please wait...</h1>;
     }
-  
+
     return (
       <div>
-        <h1>rolodex</h1>
+        <UserCard
+          firstName={users.results[0].name.first}
+          lastName={users.results[0].name.last}
+          imgSrc={users.results[0].picture.large}
+        />
       </div>
     );
   }
