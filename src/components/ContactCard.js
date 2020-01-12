@@ -6,7 +6,7 @@ import ShowDetailsBtn from "./ShowDetailsBtn";
 
 class UserCard extends React.Component {
   state = {
-    displayDetails: false
+    displayDetails: true
   };
   render() {
     return (
@@ -17,11 +17,12 @@ class UserCard extends React.Component {
         {this.state.displayDetails ?
           <CardBack 
             name={this.props.firstName}
-            imgMed={this.props.imgMed} 
+            imgLrg={this.props.imgLrg} 
             age={this.props.age} 
             email={this.props.email} 
             city={this.props.city} 
-            country={this.props.country} 
+            country={this.props.country}
+            phone={this.props.phone} 
          /> : 
           <CardFront 
            name={this.props.firstName}

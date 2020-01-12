@@ -44,7 +44,6 @@ class App extends React.Component {
           firstName={contacts[index].name.first}
           lastName={contacts[index].name.last}
           imgLrg={contacts[index].picture.large}
-          imgMed={contacts[index].picture.medium}
           phone={contacts[index].cell}
           email={contacts[index].email}
           age={contacts[index].dob.age}
