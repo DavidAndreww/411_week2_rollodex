@@ -1,9 +1,8 @@
 import React from 'react'
 
-const HideDetailsBtn = () => {
+const HideDetailsBtn = ({ toggleDetails }) => {
   return (
-    <button>Hide Deets</button>
+    <button className="details-button" onClick={() => toggleDetails()} >Hide Details</button>
   )
 }
-
 export default HideDetailsBtn;

@@ -6,11 +6,17 @@ import ShowDetailsBtn from "./ShowDetailsBtn";
 
 class UserCard extends React.Component {
   state = {
-    displayDetails: true
+    displayDetails: false
   };
+
+  toggleDetails = () => {
+    this.setState({ displayDetails: !this.state.displayDetails })
+    
+  }
+
   render() {
     return (
-      <div className="contactCard">
+      <div className="contact-card">
         <h1>
           {this.props.firstName} {this.props.lastName}
         </h1>
@@ -29,7 +35,7 @@ class UserCard extends React.Component {
            imgLrg={this.props.imgLrg}
            phone={this.props.phone} 
          />}
-        {this.state.displayDetails ? <HideDetailsBtn /> : <ShowDetailsBtn />}
+        {this.state.displayDetails ? <HideDetailsBtn toggleDetails={this.toggleDetails} /> : <ShowDetailsBtn toggleDetails={this.toggleDetails} />}
       </div>
     );
   }

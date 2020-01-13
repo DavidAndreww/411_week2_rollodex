@@ -50,8 +50,8 @@ class App extends React.Component {
           city={contacts[index].location.city}
           country={contacts[index].location.country}
         />
-        <button onClick={() => this.displayNewContact(1)}>Left</button>
-        <button onClick={() => this.displayNewContact(2)}>Right</button>
+        <button className="change-contact-button" onClick={() => this.displayNewContact(1)}>Previous</button>
+        <button className="change-contact-button" onClick={() => this.displayNewContact(2)}>Next</button>
       </div>
     );
   }

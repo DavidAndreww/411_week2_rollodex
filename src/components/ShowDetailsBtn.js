@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ShowDetailsBtn = () => {
+const ShowDetailsBtn = ({ toggleDetails }) => {
   return (
-    <button>Show Deets</button>
+    <button className="details-button" onClick={() => toggleDetails()}>Show Details</button>
   )
 }
 
