@@ -9,10 +9,10 @@ class UserCard extends React.Component {
     displayDetails: false
   };
 
+  // toggles state of displayDetails to allow for rendering of different sides of contact card
   toggleDetails = () => {
-    this.setState({ displayDetails: !this.state.displayDetails })
-    
-  }
+    this.setState({ displayDetails: !this.state.displayDetails });
+  };
 
   render() {
     return (
@@ -20,22 +20,28 @@ class UserCard extends React.Component {
         <h1>
           {this.props.firstName} {this.props.lastName}
         </h1>
-        {this.state.displayDetails ?
-          <CardBack 
+        {this.state.displayDetails ? (
+          <CardBack
             name={this.props.firstName}
-            imgLrg={this.props.imgLrg} 
-            age={this.props.age} 
-            email={this.props.email} 
-            city={this.props.city} 
+            imgLrg={this.props.imgLrg}
+            age={this.props.age}
+            email={this.props.email}
+            city={this.props.city}
             country={this.props.country}
-            phone={this.props.phone} 
-         /> : 
-          <CardFront 
-           name={this.props.firstName}
-           imgLrg={this.props.imgLrg}
-           phone={this.props.phone} 
-         />}
-        {this.state.displayDetails ? <HideDetailsBtn toggleDetails={this.toggleDetails} /> : <ShowDetailsBtn toggleDetails={this.toggleDetails} />}
+            phone={this.props.phone}
+          />
+        ) : (
+          <CardFront
+            name={this.props.firstName}
+            imgLrg={this.props.imgLrg}
+            phone={this.props.phone}
+          />
+        )}
+        {this.state.displayDetails ? (
+          <HideDetailsBtn toggleDetails={this.toggleDetails} />
+        ) : (
+          <ShowDetailsBtn toggleDetails={this.toggleDetails} />
+        )}
       </div>
     );
   }
