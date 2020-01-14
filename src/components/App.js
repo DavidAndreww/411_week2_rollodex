@@ -20,7 +20,7 @@ class App extends React.Component {
     this.fetchData();
   }
 
-  // takes argument from the button that is clicked, to determine if previous or next contact displays
+  // takes argument from the button that is clicked, (line 60 and 66) to determine if previous or next contact displays
   displayNewContact = key => {
     let counter = this.state.counter;
     let contactLength = this.state.contacts.results.length - 1;
@@ -44,6 +44,7 @@ class App extends React.Component {
     }
 
     return (
+      // index of contact to pull data from is equal to the counter, allows for prev and next contacts button to function
       <div className="app">
         <ContactCard
           firstName={contacts[index].name.first}

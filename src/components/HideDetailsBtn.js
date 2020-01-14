@@ -7,4 +7,5 @@ const HideDetailsBtn = ({ toggleDetails }) => {
     </button>
   );
 };
+
 export default HideDetailsBtn;
