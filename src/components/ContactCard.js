@@ -24,8 +24,9 @@ class UserCard extends React.Component {
         ) : (
           <CardFront contacts={contacts} />
         )}
-        <button className="details-button" onClick={this.toggleDetails}>{this.state.displayDetails ? 'Hide Details' : 'Show Details'}</button>
-        
+        <button className="details-button" onClick={this.toggleDetails}>
+          {this.state.displayDetails ? "Hide Details" : "Show Details"}
+        </button>
       </div>
     );
   }

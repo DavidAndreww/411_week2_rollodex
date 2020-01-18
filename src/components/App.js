@@ -7,7 +7,7 @@ class App extends React.Component {
     counter: 0
   };
 
-  // when app component mounts, runs fetchData fuction
+  // when app component mounts, data is fetched
   componentDidMount() {
     fetch("https://randomuser.me/api?results=25")
       .then(response => response.json())
@@ -15,7 +15,7 @@ class App extends React.Component {
       .catch(error => console.log("Error occured: ", error));
   }
 
-  // takes argument from the button that is clicked, (line 60 and 66) to determine if previous or next contact displays
+  // takes argument from the button that is clicked, (line 60 and 66) to determine if previous or next contact displays.
   displayNewContact = key => {
     let counter = this.state.counter;
     let contactLength = this.state.contacts.length - 1;
