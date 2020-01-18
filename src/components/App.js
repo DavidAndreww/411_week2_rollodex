@@ -41,17 +41,7 @@ class App extends React.Component {
     return (
       // index of contact to pull data from is equal to the counter, allows for prev and next contacts button to function
       <div className="app">
-        <ContactCard
-          contacts={contacts[index]}
-          firstName={contacts[index].name.first}
-          lastName={contacts[index].name.last}
-          imgLrg={contacts[index].picture.large}
-          phone={contacts[index].cell}
-          email={contacts[index].email}
-          age={contacts[index].dob.age}
-          city={contacts[index].location.city}
-          country={contacts[index].location.country}
-        />
+        <ContactCard contacts={contacts[index]} />
         <button
           className="change-contact-button"
           onClick={() => this.displayNewContact(1)}
