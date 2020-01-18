@@ -15,27 +15,16 @@ class UserCard extends React.Component {
   };
 
   render() {
+    let contacts = this.props.contacts;
     return (
       <div className="contact-card">
         <h1>
-          {this.props.firstName} {this.props.lastName}
+          {contacts.name.first} {contacts.name.last}
         </h1>
         {this.state.displayDetails ? (
-          <CardBack
-            name={this.props.firstName}
-            imgLrg={this.props.imgLrg}
-            age={this.props.age}
-            email={this.props.email}
-            city={this.props.city}
-            country={this.props.country}
-            phone={this.props.phone}
-          />
+          <CardBack contacts={contacts} />
         ) : (
-          <CardFront
-            name={this.props.firstName}
-            imgLrg={this.props.imgLrg}
-            phone={this.props.phone}
-          />
+          <CardFront contacts={contacts} />
         )}
         {this.state.displayDetails ? (
           <HideDetailsBtn toggleDetails={this.toggleDetails} />

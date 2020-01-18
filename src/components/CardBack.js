@@ -1,18 +1,18 @@
 import React from "react";
 
-const CardBack = ({ name, imgLrg, age, email, city, country, phone }) => {
+const CardBack = ({ contacts }) => {
   return (
     <div className="card-back">
       <div className="left-content">
-        <img src={imgLrg} alt={name} />
-        <p>{phone}</p>
+        <img src={contacts.picture.large} alt={contacts.name.first} />
+        <p>{contacts.phone}</p>
       </div>
       <div className="right-content">
         <ul>
-          <li>Age: {age}</li>
-          <li>Email: {email}</li>
+          <li>Age: {contacts.dob.age}</li>
+          <li>Email: {contacts.email}</li>
           <li>
-            Location: {city}, {country}
+            Location: {contacts.location.city}, {contacts.location.country}
           </li>
         </ul>
       </div>
