@@ -1,8 +1,6 @@
 import React from "react";
 import CardBack from "./CardBack";
 import CardFront from "./CardFront";
-import HideDetailsBtn from "./HideDetailsBtn";
-import ShowDetailsBtn from "./ShowDetailsBtn";
 
 class UserCard extends React.Component {
   state = {
